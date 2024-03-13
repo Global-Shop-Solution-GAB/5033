@@ -1,0 +1,891 @@
+Program.Sub.ScreenSU.Start
+Gui.F_XEQ001..Create
+Gui.F_XEQ001..Caption("Equipment File Maintenance")
+Gui.F_XEQ001..Size(8100,5055)
+Gui.F_XEQ001..MinX(0)
+Gui.F_XEQ001..MinY(0)
+Gui.F_XEQ001..Position(0,0)
+Gui.F_XEQ001..BackColor(-2147483633)
+Gui.F_XEQ001..MousePointer(0)
+Gui.F_XEQ001..Event(UnLoad,F_XEQ001_UnLoad)
+Gui.F_XEQ001.lbl1.Create(Label,"Equipment ID",True,1110,255,0,720,285,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001.txtEquipmentID.Create(TextBox,"",True,1650,300,0,450,480,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtEquipmentID.MaxLength(10)
+Gui.F_XEQ001.txtEquipmentID.Event(LostFocus,txtEquipmentID_LostFocus)
+Gui.F_XEQ001.lbl2.Create(Label,"Customer Number",True,1440,255,0,2640,285,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001.txtCustNo.Create(TextBox,"",True,1215,300,0,2760,495,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtCustNo.MaxLength(6)
+Gui.F_XEQ001.txtCustNo.Event(LostFocus,txtCustNo_LostFocus)
+Gui.F_XEQ001.cmdEquipIDBrowser.Create(Button)
+Gui.F_XEQ001.cmdEquipIDBrowser.Size(450,375)
+Gui.F_XEQ001.cmdEquipIDBrowser.Position(2115,450)
+Gui.F_XEQ001.cmdEquipIDBrowser.Caption("^")
+Gui.F_XEQ001.cmdEquipIDBrowser.Event(Click,cmdEquipIDBrowser_Click)
+Gui.F_XEQ001.cmdCustNoBrowser.Create(Button)
+Gui.F_XEQ001.cmdCustNoBrowser.Size(450,375)
+Gui.F_XEQ001.cmdCustNoBrowser.Position(3990,450)
+Gui.F_XEQ001.cmdCustNoBrowser.Caption("^")
+Gui.F_XEQ001.cmdCustNoBrowser.Event(Click,cmdCustNoBrowser_Click)
+Gui.F_XEQ001.lbl3.Create(Label,"Ship-To-ID",True,960,255,0,4845,285,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001.txtShipToID.Create(TextBox,"",True,1215,300,0,4695,495,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtShipToID.MaxLength(6)
+Gui.F_XEQ001.txtShipToID.Event(LostFocus,txtShipToID_LostFocus)
+Gui.F_XEQ001.cmdShipToBrowser.Create(Button)
+Gui.F_XEQ001.cmdShipToBrowser.Size(450,375)
+Gui.F_XEQ001.cmdShipToBrowser.Position(5925,450)
+Gui.F_XEQ001.cmdShipToBrowser.Caption("^")
+Gui.F_XEQ001.cmdShipToBrowser.Event(Click,cmdShipToBrowser_Click)
+Gui.F_XEQ001.chkActiveFlag.Create(CheckBox)
+Gui.F_XEQ001.chkActiveFlag.Size(915,360)
+Gui.F_XEQ001.chkActiveFlag.Position(6600,465)
+Gui.F_XEQ001.chkActiveFlag.Caption("Active")
+Gui.F_XEQ001.lbl4.Create(Label,"Customer/Ship To Name",True,1935,255,0,2610,960,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001.txtCustShipToName.Create(TextBox,"",True,5175,300,0,1320,1155,False,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtCustShipToName.MaxLength(30)
+Gui.F_XEQ001.lbl5.Create(Label,"Description:",True,975,255,0,375,1740,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001.txtDescription.Create(TextBox,"",True,5175,300,0,1380,1650,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtDescription.MaxLength(30)
+Gui.F_XEQ001.txtDescription2.Create(TextBox,"",True,5175,300,0,1380,2025,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtDescription2.MaxLength(30)
+Gui.F_XEQ001.txtDescription3.Create(TextBox,"",True,5175,300,0,1380,2430,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtDescription3.MaxLength(30)
+Gui.F_XEQ001.cmdNotes.Create(Button)
+Gui.F_XEQ001.cmdNotes.Size(855,375)
+Gui.F_XEQ001.cmdNotes.Position(6810,1980)
+Gui.F_XEQ001.cmdNotes.Caption("Notes")
+Gui.F_XEQ001.cmdNotes.Event(Click,cmdNotes_Click)
+Gui.F_XEQ001.lbl6.Create(Label,"Model Number",True,1230,255,0,1575,2970,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001.lbl7.Create(Label,"Serial Number",True,1170,255,0,5130,2970,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001.txtModelNumber.Create(TextBox,"",True,3420,300,0,480,3195,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtModelNumber.MaxLength(20)
+Gui.F_XEQ001.txtSerialNumber.Create(TextBox,"",True,3420,300,0,4005,3195,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001.txtSerialNumber.MaxLength(20)
+Gui.F_XEQ001.cmdOk.Create(Button)
+Gui.F_XEQ001.cmdOk.Size(1020,555)
+Gui.F_XEQ001.cmdOk.Position(2790,3780)
+Gui.F_XEQ001.cmdOk.Caption("Ok")
+Gui.F_XEQ001.cmdOk.Event(Click,cmdOk_Click)
+Gui.F_XEQ001.cmdCancel.Create(Button)
+Gui.F_XEQ001.cmdCancel.Size(1020,555)
+Gui.F_XEQ001.cmdCancel.Position(4110,3780)
+Gui.F_XEQ001.cmdCancel.Caption("Cancel")
+Gui.F_XEQ001.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.F_XEQ002..Create
+Gui.F_XEQ002..Caption("Equipment Notes")
+Gui.F_XEQ002..Size(6390,4635)
+Gui.F_XEQ002..MinX(0)
+Gui.F_XEQ002..MinY(0)
+Gui.F_XEQ002..Position(0,0)
+Gui.F_XEQ002..BackColor(-2147483633)
+Gui.F_XEQ002..MousePointer(0)
+Gui.F_XEQ002..Event(UnLoad,F_XEQ002_UnLoad)
+Gui.F_XEQ002.lbl1.Create(Label,"EQUIPMENT:",True,1065,255,0,1650,420,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ002.txtEquipmentNo.Create(TextBox,"",True,1650,300,0,2955,330,False,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ002.lbl2.Create(Label,"Equipment Notes",True,1455,255,0,2325,1005,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ002.txtEquipmentNotes.Create(TextboxM)
+Gui.F_XEQ002.txtEquipmentNotes.Size(2805,1950)
+Gui.F_XEQ002.txtEquipmentNotes.Position(1635,1335)
+Gui.F_XEQ002.txtEquipmentNotes.TabStop(True)
+Gui.F_XEQ002.txtEquipmentNotes.TabIndex(1)
+Gui.F_XEQ002.cmdOk.Create(Button)
+Gui.F_XEQ002.cmdOk.Size(855,375)
+Gui.F_XEQ002.cmdOk.Position(1920,3480)
+Gui.F_XEQ002.cmdOk.TabStop(True)
+Gui.F_XEQ002.cmdOk.TabIndex(2)
+Gui.F_XEQ002.cmdOk.Caption("Ok")
+Gui.F_XEQ002.cmdOk.Event(Click,cmdOk_Click_XEQ002)
+Gui.F_XEQ002.cmdExit.Create(Button)
+Gui.F_XEQ002.cmdExit.Size(855,375)
+Gui.F_XEQ002.cmdExit.Position(3375,3480)
+Gui.F_XEQ002.cmdExit.TabStop(True)
+Gui.F_XEQ002.cmdExit.TabIndex(3)
+Gui.F_XEQ002.cmdExit.Caption("Exit")
+Gui.F_XEQ002.cmdExit.Event(Click,cmdExit_Click)
+Gui.F_XEQ001_Copy..Create
+Gui.F_XEQ001_Copy..Caption("Copy Equipment Information")
+Gui.F_XEQ001_Copy..Size(5310,3585)
+Gui.F_XEQ001_Copy..MinX(0)
+Gui.F_XEQ001_Copy..MinY(0)
+Gui.F_XEQ001_Copy..Position(0,0)
+Gui.F_XEQ001_Copy..BackColor(-2147483633)
+Gui.F_XEQ001_Copy..MousePointer(0)
+Gui.F_XEQ001_Copy..Event(UnLoad,F_XEQ001_Copy_UnLoad)
+Gui.F_XEQ001_Copy.lbl1.Create(Label,"Copy Equipment Info From:",True,2160,255,0,1350,405,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001_Copy.txtCopyFrom.Create(TextBox,"",True,1650,300,0,1605,720,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001_Copy.txtCopyFrom.Event(LostFocus,txtCopyFrom_LostFocus)
+Gui.F_XEQ001_Copy.txtCopyFrom.MaxLength(10)
+Gui.F_XEQ001_Copy.cmdFromBrowser.Create(Button)
+Gui.F_XEQ001_Copy.cmdFromBrowser.Size(450,375)
+Gui.F_XEQ001_Copy.cmdFromBrowser.Position(3375,690)
+Gui.F_XEQ001_Copy.cmdFromBrowser.Caption("^")
+Gui.F_XEQ001_Copy.cmdFromBrowser.Event(Click,cmdFromBrowser_Click)
+Gui.F_XEQ001_Copy.lbl2.Create(Label,"To Equipment Number:",True,1725,255,0,1575,1215,True,0,"Arial",8,-2147483633,0)
+Gui.F_XEQ001_Copy.txtCopyTo.Create(TextBox,"",True,1650,300,0,1620,1470,True,0,"Arial",8,-2147483643,1)
+Gui.F_XEQ001_Copy.txtCopyTo.Event(LostFocus,txtCopyTo_LostFocus)
+Gui.F_XEQ001_Copy.txtCopyTo.MaxLength(10)
+Gui.F_XEQ001_Copy.cmdOk_XEQ001_Copy.Create(Button)
+Gui.F_XEQ001_Copy.cmdOk_XEQ001_Copy.Size(1140,645)
+Gui.F_XEQ001_Copy.cmdOk_XEQ001_Copy.Position(1275,2025)
+Gui.F_XEQ001_Copy.cmdOk_XEQ001_Copy.Caption("Ok")
+Gui.F_XEQ001_Copy.cmdOk_XEQ001_Copy.Event(Click,cmdOk_XEQ001_Copy_Click)
+Gui.F_XEQ001_Copy.cmdCancel_XEQ001_Copy.Create(Button)
+Gui.F_XEQ001_Copy.cmdCancel_XEQ001_Copy.Size(1140,645)
+Gui.F_XEQ001_Copy.cmdCancel_XEQ001_Copy.Position(2490,2025)
+Gui.F_XEQ001_Copy.cmdCancel_XEQ001_Copy.Caption("Cancel")
+Gui.F_XEQ001_Copy.cmdCancel_XEQ001_Copy.Event(Click,cmdCancel_XEQ001_Copy_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.sSwitch.Declare(String)
+V.Global.bOpenCopy.Declare(Boolean,False)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+	F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+	'Set a variable to the switch value so that we don't have to continuously access the caller variable.
+	V.Global.sSwitch.Set(V.Caller.Switches)
+	'V.Global.sSwitch.Set("O")
+	'V.Global.sSwitch.Set("C")
+	'V.Global.sSwitch.Set("D")
+	F.Intrinsic.Control.SelectCase(V.Global.sSwitch)
+	'Open Switch
+	F.Intrinsic.Control.Case("O")
+		Gui.F_XEQ001..Show
+	
+	'Copy Switch
+	F.Intrinsic.Control.Case("C")
+		Gui.F_XEQ001_Copy..Show
+	
+	'Delete Switch - No reason for user to be able to modify any information
+	F.Intrinsic.Control.Case("D")
+		Gui.F_XEQ001.txtCustNo.Enabled(False)
+		Gui.F_XEQ001.cmdCustNoBrowser.Visible(False)
+		Gui.F_XEQ001.txtShipToID.Enabled(False)
+		Gui.F_XEQ001.cmdShipToBrowser.Visible(False)
+		Gui.F_XEQ001.txtDescription.Enabled(False)
+		Gui.F_XEQ001.txtDescription2.Enabled(False)
+		Gui.F_XEQ001.txtDescription3.Enabled(False)
+		Gui.F_XEQ001.cmdNotes.Enabled(False)
+		Gui.F_XEQ001.txtModelNumber.Enabled(False)
+		Gui.F_XEQ001.txtSerialNumber.Enabled(False)
+		Gui.F_XEQ001.chkActiveFlag.Enabled(False)
+		Gui.F_XEQ001..Show
+	
+	'Default case is New, so we'll just assume they're adding a new record if no switch
+	F.Intrinsic.Control.CaseElse
+		'Lock the Equipment ID Browser since duplicates aren't allowed
+		Gui.F_XEQ001.cmdEquipIDBrowser.Visible(False)
+		Gui.F_XEQ001..Show
+	
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorHandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+'Unload Program
+Program.Sub.F_XEQ001_UnLoad.Start
+F.Intrinsic.Control.Try
+
+	F.ODBC.Connection!con.Close
+	F.Intrinsic.Control.End
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_XEQ001_UnLoad.End
+
+'Browse Equipment IDs
+Program.Sub.cmdEquipIDBrowser_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sColumnNames.Declare(String)
+	V.Local.iColumnWidths.Declare(Long)
+	V.Local.sRet.Declare(String)
+	
+	F.Intrinsic.String.Split("Equipment No*!*Customer*!*Customer Name*!*Ship To ID*!*Description 1*!*DESC2*!*DESC3*!*MODEL_NO*!*SERIAL_NO*!*ACTIVE_FLAG","*!*",V.Local.sColumnNames)
+	F.Intrinsic.String.Split("1000*!*1000*!*2000*!*1000*!*3000*!*0*!*0*!*0*!*0*!*0","*!*",V.Local.iColumnWidths)
+	
+	F.Intrinsic.UI.Browser("Select Equipment ID","con","SELECT EQUIP_NO,CUST,CUST_SHIP_TO_NAME,SHIP_TO,DESC1,DESC2,DESC3,MODEL_NO,SERIAL_NO,ACTIVE_FLAG FROM EQUIP",V.Local.sColumnNames,V.Local.iColumnWidths,V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_XEQ001.txtEquipmentID.Text(V.Local.sRet(0))
+		Gui.F_XEQ001.txtCustNo.Text(V.Local.sRet(1))
+		Gui.F_XEQ001.txtShipToID.Text(V.Local.sRet(3))
+		Gui.F_XEQ001.txtCustShipToName.Text(V.Local.sRet(2).Trim)
+		Gui.F_XEQ001.txtDescription.Text(V.Local.sRet(4).Trim)
+		Gui.F_XEQ001.txtDescription2.Text(V.Local.sRet(5).Trim)
+		Gui.F_XEQ001.txtDescription3.Text(V.Local.sRet(6).Trim)
+		Gui.F_XEQ001.txtModelNumber.Text(V.Local.sRet(7).Trim)
+		Gui.F_XEQ001.txtSerialNumber.Text(V.Local.sRet(8).Trim)
+		
+		'Check the value of the Active flag. If "Y" checkbox checked, otherwise unchecked.
+		F.Intrinsic.Control.If(V.Local.sRet(9),=,"Y")
+			Gui.F_XEQ001.chkActiveFlag.Value(1)
+		F.Intrinsic.Control.Else
+			Gui.F_XEQ001.chkActiveFlag.Value(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdEquipIDBrowser_Click.End
+
+'Browser for customers. Uses Common Browser 205.
+Program.Sub.cmdCustNoBrowser_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sRet.Declare(String)
+	V.Local.sCheckBlank.Declare(String)
+	V.Local.sSQL.Declare(String)
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+	
+	'Make sure they haven't canceled, and if so set the Customer Number. If Ship To Exists make sure that it actually exists for the customer selected, if not clear out ShipTo and reset Customer Name.
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		
+		Gui.F_XEQ001.txtCustNo.Text(V.Local.sRet(0))
+		
+		V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtShipToID.Text)
+		'Check if Ship To has a value. If so make sure that it is valid for the customer. if not make it blank
+		F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")
+			F.Intrinsic.String.Build("Select * From OE_MULTI_SHIP WHERE CUSTOMER = '{0}' AND SHIP_SEQ = '{1}'",V.Screen.F_XEQ001!txtCustNo.Text,V.Screen.F_XEQ001!txtShipToID.Text,V.Local.sSQL)
+			F.ODBC.Connection!con.OpenLocalRecordsetRO("rstExists",V.Local.sSQL)
+			
+			'If found, use the Customer Name from OE_MULT_SHIP, otherwise clear out the Ship To ID and set it to the selected customer master NAME_CUSTOMER
+			F.Intrinsic.Control.If(V.ODBC.con!rstExists.EOF,<>,True)
+				Gui.F_XEQ001.txtCustShipToName.Text(V.ODBC.con!rstExists.FieldValTrim!CUSTOMER_NAME)			
+			F.Intrinsic.Control.Else
+				Gui.F_XEQ001.txtShipToID.Text("")
+				Gui.F_XEQ001.txtCustShipToName.Text(V.Local.sRet(1))		
+			F.Intrinsic.Control.EndIf
+			
+			F.ODBC.con!rstExists.Close
+		F.Intrinsic.Control.Else
+			Gui.F_XEQ001.txtCustShipToName.Text(V.Local.sRet(1))
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustNoBrowser_Click.End
+
+'Browse to the list of Ship To IDs. If a customer is entered this will filter by the customer number.
+Program.Sub.cmdShipToBrowser_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sColumnTitles.Declare(String)
+	V.Local.iColumnWidths.Declare(Long)
+	V.Local.sSQL.Declare(String)
+	V.Local.sWhere.Declare(String)
+	V.Local.sCheckBlank.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	F.Intrinsic.String.Split("SHIP SEQ*!*CUSTOMER*!*CUSTOMER NAME","*!*",V.Local.sColumnTitles)
+	F.Intrinsic.String.Split("1000*!*1000*!*3000","*!*",V.Local.iColumnWidths)
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtCustNo.Text)
+	
+	'If customer is already filled in, simply filter by Customer Number. 
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")
+		F.Intrinsic.String.Build("WHERE CUSTOMER = '{0}'",V.Screen.F_XEQ001!txtCustNo.Text,V.Local.sWhere)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("SELECT SHIP_SEQ,CUSTOMER,CUSTOMER_NAME FROM OE_MULTI_SHIP {0}",V.Local.sWhere,V.Local.sSQL)
+	
+	F.Intrinsic.UI.Browser("Select Ship To ID","con",V.Local.sSQL,V.Local.sColumnTitles,V.Local.iColumnWidths,V.Local.sRet)
+
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		 F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		 Gui.F_XEQ001.txtCustNo.Text(V.Local.sRet(1))
+		 Gui.F_XEQ001.txtShipToID.Text(V.Local.sRet(0))
+		 Gui.F_XEQ001.txtCustShipToName.Text(V.Local.sRet(2))
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdShipToBrowser_Click.End
+
+'Verify that the Equipment ID is either valid or doesn't exist depending on whether it's new or not.
+Program.Sub.txtEquipmentID_LostFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare(String)
+	V.Local.sCheckBlank.Declare(String)
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtEquipmentID.Text)
+
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")	
+		F.Intrinsic.String.Build("SELECT * FROM EQUIP WHERE EQUIP_NO = '{0}'",V.Screen.F_XEQ001!txtEquipmentID.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rstExists",V.Local.sSQL)
+		
+		'If the switch is "O" we need to verify that the ID exists. If it's N then we need to make sure that it doesn't exist.
+		F.Intrinsic.Control.SelectCase(V.Global.sSwitch)
+		
+		F.Intrinsic.Control.CaseAny("O","D")
+			F.Intrinsic.Control.If(V.ODBC.con!rstExists.EOF,<>,True)
+				'Since it exists we need to go ahead and load the information for the Equipment Number
+				Gui.F_XEQ001.txtCustNo.Text(V.ODBC.con!rstExists.FieldValTrim!CUST)
+				Gui.F_XEQ001.txtShipToID.Text(V.ODBC.con!rstExists.FieldValTrim!SHIP_TO)
+				Gui.F_XEQ001.txtCustShipToName.Text(V.ODBC.con!rstExists.FieldValTrim!CUST_SHIP_TO_NAME)
+				Gui.F_XEQ001.txtDescription.Text(V.ODBC.con!rstExists.FieldValTrim!DESC1)
+				Gui.F_XEQ001.txtDescription2.Text(V.ODBC.con!rstExists.FieldValTrim!DESC2)
+				Gui.F_XEQ001.txtDescription3.Text(V.ODBC.con!rstExists.FieldValTrim!DESC3)
+				Gui.F_XEQ001.txtModelNumber.Text(V.ODBC.con!rstExists.FieldValTrim!MODEL_NO)
+				Gui.F_XEQ001.txtSerialNumber.Text(V.ODBC.con!rstExists.FieldValTrim!SERIAL_NO)
+				
+				'Check the value of the Active flag. If "Y" checkbox checked, otherwise unchecked.
+				F.Intrinsic.Control.If(V.ODBC.con!rstExists.FieldValTrim!ACTIVE_FLAG,=,"Y")
+					Gui.F_XEQ001.chkActiveFlag.Value(1)
+				F.Intrinsic.Control.Else
+					Gui.F_XEQ001.chkActiveFlag.Value(0)
+				F.Intrinsic.Control.EndIf
+				
+			F.Intrinsic.Control.Else
+				F.Intrinsic.UI.Msgbox("No Records Found For This Equipment Number")
+				Gui.F_XEQ001.txtEquipmentID.Text("")
+				Gui.F_XEQ001.txtCustNo.Text("")
+				Gui.F_XEQ001.txtShipToID.Text("")
+				Gui.F_XEQ001.txtCustShipToName.Text("")
+				Gui.F_XEQ001.txtDescription.Text("")
+				Gui.F_XEQ001.txtDescription2.Text("")
+				Gui.F_XEQ001.txtDescription3.Text("")
+				Gui.F_XEQ001.txtModelNumber.Text("")
+				Gui.F_XEQ001.txtSerialNumber.Text("")
+				Gui.F_XEQ001.chkActiveFlag.Value(0)
+				
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.CaseElse
+			F.Intrinsic.Control.If(V.ODBC.con!rstExists.EOF,<>,True)
+				F.Intrinsic.UI.Msgbox("Duplicate Equipment No, Please Enter New No")
+				Gui.F_XEQ001.txtEquipmentID.Text("")
+				Gui.F_XEQ001.txtCustNo.Text("")
+				Gui.F_XEQ001.txtShipToID.Text("")
+				Gui.F_XEQ001.txtCustShipToName.Text("")
+				Gui.F_XEQ001.txtDescription.Text("")
+				Gui.F_XEQ001.txtDescription2.Text("")
+				Gui.F_XEQ001.txtDescription3.Text("")
+				Gui.F_XEQ001.txtModelNumber.Text("")
+				Gui.F_XEQ001.txtSerialNumber.Text("")
+				Gui.F_XEQ001.chkActiveFlag.Value(0)			
+			F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.EndSelect
+		
+		F.ODBC.con!rstExists.Close
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtEquipmentID_LostFocus.End
+
+'Verify that the customer number is valid.
+Program.Sub.txtCustNo_LostFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare(String)
+	V.Local.sCheckBlank.Declare(String)
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtCustNo.Text)
+	
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")
+		F.Intrinsic.String.Build("SELECT CUSTOMER,NAME_CUSTOMER FROM CUSTOMER_MASTER WHERE CUSTOMER = '{0}' AND REC = '1'",V.Screen.F_XEQ001!txtCustNo.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenLocalRecordSetRO("rstExists",V.Local.sSQL)
+		
+		F.Intrinsic.Control.If(V.ODBC.con!rstExists.EOF,<>,True)		
+			V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtShipToID.Text)
+			'Check if Ship To has a value. If so make sure that it is valid for the customer. if not make it blank
+			F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")
+				F.Intrinsic.String.Build("Select * From OE_MULTI_SHIP WHERE CUSTOMER = '{0}' AND SHIP_SEQ = '{1}'",V.Screen.F_XEQ001!txtCustNo.Text,V.Screen.F_XEQ001!txtShipToID.Text,V.Local.sSQL)
+				F.ODBC.Connection!con.OpenLocalRecordsetRO("rstShipToExists",V.Local.sSQL)
+				
+				'If found, use the Customer Name from OE_MULT_SHIP, otherwise clear out the Ship To ID and set it to the selected customer master NAME_CUSTOMER
+				F.Intrinsic.Control.If(V.ODBC.con!rstShipToExists.EOF,<>,True)
+					Gui.F_XEQ001.txtCustShipToName.Text(V.ODBC.con!rstShipToExists.FieldValTrim!CUSTOMER_NAME)			
+				F.Intrinsic.Control.Else
+					Gui.F_XEQ001.txtShipToID.Text("")
+					Gui.F_XEQ001.txtCustShipToName.Text(V.ODBC.con!rstExists.FieldValTrim!NAME_CUSTOMER)		
+				F.Intrinsic.Control.EndIf
+				
+				F.ODBC.con!rstShipToExists.Close
+			F.Intrinsic.Control.Else
+				Gui.F_XEQ001.txtCustShipToName.Text(V.ODBC.con!rstExists.FieldValTrim!NAME_CUSTOMER)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Customer Number Does Not Exist")
+			Gui.F_XEQ001.txtCustNo.Text("")
+			Gui.F_XEQ001.txtShipToID.Text("")
+			Gui.F_XEQ001.txtCustShipToName.Text("")
+		F.Intrinsic.Control.EndIf
+		
+		F.ODBC.con!rstExists.Close
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCustNo_LostFocus.End
+
+'Verify that the Ship To ID is valid, and that it exists for the customer if customer is already entered.
+Program.Sub.txtShipToID_LostFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sCheckBlank.Declare(String)
+	V.Local.sSQL.Declare(String)
+	V.Local.sWhere.Declare(String)
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtShipToID.Text)
+	
+	'If customer is already selected we need to verify the Ship To ID exists for that customer as well.
+	F.Intrinsic.Control.If(V.Screen.F_XEQ001!txtCustNo.Text,<>,"")
+		F.Intrinsic.String.Build("AND CUSTOMER = '{0}'",V.Screen.F_XEQ001!txtCustNo.Text,V.Local.sWhere)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")
+		'If Ship To ID exists set fields, otherwise inform customer that it either doesn't exist at all, or it doesn't exist for the customer.
+		F.Intrinsic.String.Build("SELECT * FROM OE_MULTI_SHIP WHERE SHIP_SEQ = '{0}' {1}",V.Screen.F_XEQ001!txtShipToID.Text,V.Local.sWhere,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rstExists",V.Local.sSQL)
+		
+		F.Intrinsic.Control.If(V.ODBC.con!rstExists.EOF,<>,True)
+			Gui.F_XEQ001.txtCustNo.Text(V.ODBC.con!rstExists.FieldValTrim!CUSTOMER)
+			Gui.F_XEQ001.txtCustShipToName.Text(V.ODBC.con!rstExists.FieldValTrim!CUSTOMER_NAME)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Screen.F_XEQ001!txtCustNo.Text,=,"")
+				F.Intrinsic.UI.Msgbox("Ship To ID Does Not Exist")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.UI.Msgbox("Ship To ID Does Not Exist For Customer")
+			F.Intrinsic.Control.EndIf
+			
+			Gui.F_XEQ001.txtShipToID.Text("")
+		F.Intrinsic.Control.EndIf
+		
+		F.ODBC.con!rstExists.Close
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtShipToID_LostFocus.End
+
+'This was originally program XEQ002, it will be condensed into XEQ001 here
+Program.Sub.cmdNotes_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sCheckBlank.Declare(String)
+	V.Local.sSQL.Declare(String)
+	
+	'Make sure that there is an Equipment ID and a Description filled in
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtEquipmentID.Text)
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("An Equipment ID Must Be Entered.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtDescription.Text)
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("A Description Must Be Entered")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'Set Equipment Number
+	Gui.F_XEQ002.txtEquipmentNo.Text(V.Screen.F_XEQ001!txtEquipmentID.Text)
+	
+	'Query to see if there are notes to set in the Equipment Notes Section
+	F.Intrinsic.String.Build("SELECT TEXT FROM EQUIP_NOTES WHERE EQUIP = '{0}'",V.Screen.F_XEQ001!txtEquipmentID.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenLocalRecordsetRW("rstNotes",V.Local.sSQL)
+	
+	F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,<>,True)
+		Gui.F_XEQ002.txtEquipmentNotes.Text(V.ODBC.con!rstNotes.FieldValTrim!TEXT)
+	F.Intrinsic.Control.Else
+		Gui.F_XEQ002.txtEquipmentNotes.Text("")
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.con!rstNotes.Close
+	
+	Gui.F_XEQ002..Show
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNotes_Click.End
+
+'This will save the information back to the Database
+Program.Sub.cmdOk_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sCheckBlank.Declare(String)
+	V.Local.sSQL.Declare(String)
+	V.Local.sActive.Declare(String)
+
+	'Need to make sure that the Equipment ID, Customer Number, and Description Line 1 aren't blank.
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtEquipmentID.Text)
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Equipment ID Can Not Be Blank")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtCustNo.Text)
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Customer Number Can Not Be Blank")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001!txtDescription.Text)
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Description Line 1 Can Not Be Blank")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.SelectCase(V.Global.sSwitch)
+	
+	f.Intrinsic.Control.Case("O")
+		'Check active flag and set to Y or N
+		F.Intrinsic.Control.If(V.Screen.F_XEQ001!chkActiveFlag.Value,=,0)
+			V.Local.sActive.Set("N")
+		F.Intrinsic.Control.Else
+			V.Local.sActive.Set("Y")
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("SELECT * FROM EQUIP WHERE EQUIP_NO = '{0}'",V.Screen.F_XEQ001!txtEquipmentID.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenLocalRecordsetRW("rstSave",V.Local.sSQL)
+		
+		F.Intrinsic.Control.If(V.ODBC.con!rstSave.EOF,<>,True)
+			F.ODBC.con!rstSave.Set!CUST(V.Screen.F_XEQ001!txtCustNo.Text)
+			F.ODBC.con!rstSave.Set!SHIP_TO(V.Screen.F_XEQ001!txtShipToID.Text)
+			F.ODBC.con!rstSave.Set!CUST_SHIP_TO_NAME(V.Screen.F_XEQ001!txtCustShipToName.Text)
+			F.ODBC.con!rstSave.Set!DESC1(V.Screen.F_XEQ001!txtDescription.Text)
+			F.ODBC.con!rstSave.Set!DESC2(V.Screen.F_XEQ001!txtDescription2.Text)
+			F.ODBC.con!rstSave.Set!DESC3(V.Screen.F_XEQ001!txtDescription3.Text)
+			F.ODBC.con!rstSave.Set!MODEL_NO(V.Screen.F_XEQ001!txtModelNumber.Text)
+			F.ODBC.con!rstSave.Set!SERIAL_NO(V.Screen.F_XEQ001!txtSerialNumber.Text)
+			F.ODBC.con!rstSave.Set!ACTIVE_FLAG(V.Local.sActive)
+			F.ODBC.con!rstSave.Update
+		F.Intrinsic.Control.EndIf
+		
+		F.ODBC.con!rstSave.Close
+	F.Intrinsic.Control.Case("D")
+		'Delete the extra text records as well as the Equip table record
+		F.Intrinsic.String.Build("DELETE FROM EQUIP_NOTES WHERE EQUIP = '{0}'",V.Screen.F_XEQ001!txtEquipmentID.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		
+		F.Intrinsic.String.Build("DELETE FROM EQUIP WHERE EQUIP_NO = '{0}'",V.Screen.F_XEQ001!txtEquipmentID.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.CaseElse
+		'Check active flag and set to Y or N
+		F.Intrinsic.Control.If(V.Screen.F_XEQ001!chkActiveFlag.Value,=,0)
+			V.Local.sActive.Set("N")
+		F.Intrinsic.Control.Else
+			V.Local.sActive.Set("Y")
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("INSERT INTO EQUIP VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','')",V.Screen.F_XEQ001!txtEquipmentID.Text,V.Screen.F_XEQ001!txtCustNo.Text,V.Screen.F_XEQ001!txtShipToID.Text,V.Screen.F_XEQ001!txtCustShipToName.Text,V.Screen.F_XEQ001!txtDescription.Text,V.Screen.F_XEQ001!txtDescription2.Text,V.Screen.F_XEQ001!txtDescription3.Text,V.Screen.F_XEQ001!txtModelNumber.Text,V.Screen.F_XEQ001!txtSerialNumber.Text,V.Local.sActive,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)	
+	F.Intrinsic.Control.EndSelect
+	
+	'Reset screen to work on next item.
+	Gui.F_XEQ001.txtCustNo.Text("")
+	Gui.F_XEQ001.txtCustShipToName.Text("")
+	Gui.F_XEQ001.txtDescription.Text("")
+	Gui.F_XEQ001.txtDescription2.Text("")
+	Gui.F_XEQ001.txtDescription3.Text("")
+	Gui.F_XEQ001.txtEquipmentID.Text("")
+	Gui.F_XEQ001.txtModelNumber.Text("")
+	Gui.F_XEQ001.txtSerialNumber.Text("")
+	Gui.F_XEQ001.txtShipToID.Text("")
+	Gui.F_XEQ001.chkActiveFlag.Value(0)
+	'Enable the equipment textbox so they can enter another one
+	Gui.F_XEQ001.txtEquipmentID.Enabled(True)			
+	
+	
+	F.Intrinsic.Control.If(V.Global.bOpenCopy,=,True)
+		Gui.F_XEQ001..Visible(False)
+		Gui.F_XEQ001_Copy.txtCopyFrom.Text("")
+		Gui.F_XEQ001_Copy.txtCopyTo.Text("")
+		Gui.F_XEQ001_Copy..Show
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdOk_Click.End
+
+'Not really necessary, but I wanted to keep the screen as similar as possible for customers.
+Program.Sub.cmdCancel_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare(String)
+	
+	F.Intrinsic.Control.If(V.Global.sSwitch,<>,"O","AND",V.Global.sSwitch,<>,"D")
+		F.Intrinsic.String.Build("DELETE FROM EQUIP_NOTES WHERE EQUIP = '{0}'",V.Screen.F_XEQ001!txtEquipmentID.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(f_XEQ001_UnLoad)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCancel_Click.End
+
+'Used to close extra Notes Screen
+Program.Sub.F_XEQ002_UnLoad.Start
+F.Intrinsic.Control.Try
+	
+	Gui.F_XEQ002..Visible(False)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_XEQ002_UnLoad.End
+
+'Save Extra Notes
+Program.Sub.cmdOk_Click_XEQ002.Start
+F.Intrinsic.Control.Try
+	V.Local.sDate.Declare(String)
+	V.Local.sTime.Declare(String)
+	V.Local.sNotes.Declare(String)
+	V.Local.sSQL.Declare(String)
+	
+	V.Local.sNotes.Set(V.Screen.F_XEQ002!txtEquipmentNotes.Text)
+	'Equip Notes Date Format YYYYMMDD
+	'Equip Notes Time Format HHMMSSSS
+	F.Intrinsic.String.Format(V.Ambient.Date,"YYYYMMDD",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Ambient.Time,"HhNnSsss",V.Local.sTime)
+	
+	F.Intrinsic.String.Build("SELECT * FROM EQUIP_NOTES WHERE EQUIP = '{0}'",V.Screen.F_XEQ002!txtEquipmentNo.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenLocalRecordsetRW("rstNotes",V.Local.sSQL)
+	
+	'Because the key is Equipment No, Date, and TIme we have to delete the entire record and resave it
+	F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,<>,True)
+		F.Intrinsic.String.Build("DELETE FROM EQUIP_NOTES WHERE EQUIP = '{0}'",V.Screen.F_XEQ002!txtEquipmentNo.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.con!rstNotes.AddNew
+	F.ODBC.con!rstNotes.Set!EQUIP(V.Screen.F_XEQ002!txtEquipmentNo.Text)	
+	F.ODBC.con!rstNotes.Set!DATE(V.Local.sDate)
+	F.ODBC.con!rstNotes.Set!TIME(V.Local.sTime)
+	F.ODBC.con!rstNotes.Set!TEXT(V.Local.sNotes.PSQLFriendly)
+	F.ODBC.con!rstNotes.Update
+	F.ODBC.con!rstNotes.Close
+	
+	F.Intrinsic.Control.If(V.Global.sSwitch,=,"")
+		Gui.F_XEQ001.txtEquipmentID.Enabled(False)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(F_XEQ002_UnLoad)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdOk_Click_XEQ002.End
+
+'Exit Extra Notes without Saving, once again not really necessary, but want to keep the screen similar
+Program.Sub.cmdExit_Click.Start
+F.Intrinsic.Control.Try
+	
+	F.Intrinsic.Control.CallSub(F_XEQ002_UnLoad)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExit_Click.End
+
+'Make sure the EquipmentID exists
+Program.Sub.txtCopyFrom_LostFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare(String)
+	V.Local.sCheckBlank.Declare(String)
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001_Copy!txtCopyFrom.Text)
+
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")	
+		F.Intrinsic.String.Build("SELECT * FROM EQUIP WHERE EQUIP_NO = '{0}'",V.Screen.F_XEQ001_Copy!txtCopyFrom.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rstExists",V.Local.sSQL)
+
+		F.Intrinsic.Control.If(V.ODBC.con!rstExists.EOF,=,True)
+			F.Intrinsic.UI.Msgbox("No Records Found For This Equipment Number")
+			Gui.F_XEQ001_Copy.txtCopyFrom.Text("")
+		F.Intrinsic.Control.EndIf
+		
+		F.ODBC.con!rstExists.Close
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCopyFrom_LostFocus.End
+
+'Load existing EquipmentIDs
+Program.Sub.cmdFromBrowser_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sColumnNames.Declare(String)
+	V.Local.iColumnWidths.Declare(Long)
+	V.Local.sRet.Declare(String)
+	
+	F.Intrinsic.String.Split("Equipment No*!*Customer*!*Customer Name*!*Ship To ID*!*Description 1*!*DESC2*!*DESC3*!*MODEL_NO*!*SERIAL_NO*!*ACTIVE_FLAG","*!*",V.Local.sColumnNames)
+	F.Intrinsic.String.Split("1000*!*1000*!*2000*!*1000*!*3000*!*0*!*0*!*0*!*0*!*0","*!*",V.Local.iColumnWidths)
+	
+	F.Intrinsic.UI.Browser("Select Equipment ID","con","SELECT EQUIP_NO,CUST,CUST_SHIP_TO_NAME,SHIP_TO,DESC1,DESC2,DESC3,MODEL_NO,SERIAL_NO,ACTIVE_FLAG FROM EQUIP",V.Local.sColumnNames,V.Local.iColumnWidths,V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_XEQ001_Copy.txtCopyFrom.Text(V.Local.sRet(0))	
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdFromBrowser_Click.End
+
+'Make sure it doesn't already exist
+Program.Sub.txtCopyTo_LostFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare(String)
+	V.Local.sCheckBlank.Declare(String)
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001_Copy!txtCopyTo.Text)
+
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,<>,"")	
+		F.Intrinsic.String.Build("SELECT * FROM EQUIP WHERE EQUIP_NO = '{0}'",V.Screen.F_XEQ001_Copy!txtCopyTo.Text,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rstExists",V.Local.sSQL)
+
+		F.Intrinsic.Control.If(V.ODBC.con!rstExists.EOF,<>,True)
+			F.Intrinsic.UI.Msgbox("Duplicate Equipment No, Please Enter New No")
+			Gui.F_XEQ001_Copy.txtCopyTo.Text("")		
+		F.Intrinsic.Control.EndIf
+		
+		F.ODBC.con!rstExists.Close
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCopyTo_LostFocus.End
+
+'Call New Screen - CORE called open, but there's no reason if it's treating it like a new one..
+Program.Sub.cmdOk_XEQ001_Copy_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sDate.Declare(String)
+	V.Local.sTime.Declare(String)
+	V.Local.sSQL.Declare(String)
+	V.Local.sCheckBlank.Declare(String)
+	V.Local.sExtraText.Declare(String)
+	
+	'Make sure From and To are entered.
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001_Copy!txtCopyFrom.Text)
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("From Equipment ID Can Not Be Blank")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sCheckBlank.Set(V.Screen.F_XEQ001_Copy!txtCopyTo.Text)
+	F.Intrinsic.Control.If(V.Local.sCheckBlank.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("To Equipment ID Can Not Be Blank")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'Get From Equipment ID information and load it into the XEQ001 screen and XEQ002 screen
+	F.Intrinsic.String.Build("SELECT * FROM EQUIP WHERE EQUIP_NO = '{0}'",V.Screen.F_XEQ001_Copy!txtCopyFrom.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenLocalRecordSetRO("rstCopy",V.Local.sSQL)
+	
+	F.Intrinsic.Control.If(V.ODBC.con!rstCopy.EOF,<>,True)
+		Gui.F_XEQ001.txtEquipmentID.Text(V.Screen.F_XEQ001_Copy!txtCopyTo.Text)
+		Gui.F_XEQ001.txtCustNo.Text(V.ODBC.con!rstCopy.FieldValTrim!CUST)
+		Gui.F_XEQ001.txtCustShipToName.Text(V.ODBC.con!rstCopy.FieldValTrim!CUST_SHIP_TO_NAME)
+		Gui.F_XEQ001.txtDescription.Text(V.ODBC.con!rstCopy.FieldValTrim!DESC1)
+		Gui.F_XEQ001.txtDescription2.Text(V.ODBC.con!rstCopy.FieldValTrim!DESC2)
+		Gui.F_XEQ001.txtDescription3.Text(V.ODBC.con!rstCopy.FieldValTrim!DESC3)
+		Gui.F_XEQ001.txtModelNumber.Text(V.ODBC.con!rstCopy.FieldValTrim!MODEL_NO)
+		Gui.F_XEQ001.txtSerialNumber.Text(V.ODBC.con!rstCopy.FieldValTrim!SERIAL_NO)
+		Gui.F_XEQ001.txtShipToID.Text(V.ODBC.con!rstCopy.FieldValTrim!SHIP_TO)
+		
+		F.Intrinsic.Control.If(V.ODBC.con!rstCopy.FieldValTrim!ACTIVE_FLAG,=,"Y")
+			Gui.F_XEQ001.chkActiveFlag.Value(1)
+		F.Intrinsic.Control.Else
+			Gui.F_XEQ001.chkActiveFlag.Value(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Error Finding Equipment Number Record")
+		F.ODBC.con!rstCopy.Close
+		F.Intrinsic.Control.CallSub(F_XEQ001_UnLoad)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.con!rstCopy.Close
+	
+	'Lock the Equipment Number on the screen and hide the browser
+	Gui.F_XEQ001.txtEquipmentID.Enabled(False)
+	Gui.F_XEQ001.cmdEquipIDBrowser.Visible(False)
+	
+	'Get Extra Notes. We're going to just go ahead and save the extra text with the new Equipment number to the table since we're going to treat the Equipment Number as New instead of Open.
+	F.Intrinsic.String.Build("SELECT * FROM EQUIP_NOTES WHERE EQUIP = '{0}'",V.Screen.F_XEQ001_Copy!txtCopyFrom.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenLocalRecordSetRW("rstCopyNotes",V.Local.sSQL)
+	
+	'If no record exists we just don't worry about it.
+	F.Intrinsic.Control.If(V.ODBC.con!rstCopyNotes.EOF,<>,True)
+		'Equip Notes Date Format YYYYMMDD
+		'Equip Notes Time Format HHMMSSSS
+		F.Intrinsic.String.Format(V.Ambient.Date,"YYYYMMDD",V.Local.sDate)
+		F.Intrinsic.String.Format(V.Ambient.Time,"HhNnSsss",V.Local.sTime)
+		
+		V.Local.sExtraText.Set(V.ODBC.con!rstCopyNotes.FieldValTrim!TEXT)
+		
+		F.ODBC.con!rstCopyNotes.AddNew
+		F.ODBC.con!rstCopyNotes.Set!EQUIP(V.Screen.F_XEQ001_Copy!txtCopyTo.Text)
+		F.ODBC.con!rstCopyNotes.Set!DATE(V.Local.sDate)
+		F.ODBC.con!rstCopyNotes.Set!TIME(V.Local.sTime)
+		F.ODBC.con!rstCopyNotes.Set!TEXT(V.Local.sExtraText.Trim)
+		F.ODBC.con!rstCopyNotes.Update
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.con!rstCopyNotes.Close
+	
+	'Show the New screen, and hide the copy screen, and set the switch to New
+	Gui.F_XEQ001_Copy..Visible(False)
+	'Set to True so that when Ok is clicked on XEQ001 it will show the Copy screen again
+	V.Global.bOpenCopy.Set(True)
+	Gui.F_XEQ001..Show	
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdOk_XEQ001_Copy_Click.End
+
+'Close Program
+Program.Sub.F_XEQ001_Copy_UnLoad.Start
+F.Intrinsic.Control.Try
+	
+	F.Intrinsic.Control.CallSub(F_XEQ001_UnLoad)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_XEQ001_Copy_UnLoad.End
+
+'Close Program
+Program.Sub.cmdCancel_XEQ001_Copy_Click.Start
+F.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.CallSub(F_XEQ001_UnLoad)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(errorhandler, "Sub", V.Ambient.CurrentSubroutine, "ErrNo", V.Ambient.ErrorNumber, "ErrDesc", V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCancel_XEQ001_Copy_Click.End
+
+'Handles all errors
+Program.Sub.errorHandler.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String)
+	
+	'Show error and then unload program
+	Function.Intrinsic.String.Build("Project: XEQ001_Conversion.g2u{0}{0}Subroutine: {1}{0}Error Occured {2} with description {3}",V.Ambient.Newline,V.Args.Sub,V.Args.ErrNo,V.Args.ErrDesc,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(f_XEQ001_UnLoad)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(F_XEQ001_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.errorHandler.End
